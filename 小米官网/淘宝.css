@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+   border: 0;
+}
+#a1 h1{
+    margin: 0 auto;
+    height: 50px;
+    width: 1190px;
+    background: #ff0000;
+}
