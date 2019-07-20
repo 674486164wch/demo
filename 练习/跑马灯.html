@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<!--想要获取data中的数据，或者想要调用methods中的方法，必须使用this.数据属性名，或者this.方法名来进行访问-->
+<div id="app">
+    <input type="button" value="浪起来" @click="lang">
+    <input type="button" value="稳住">
+    <h4>{{ msg }}</h4>
+</div>
+<script >
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:'猥琐发育，别浪~~！'
+        },
+        methods:{
+            lang(){
+                // var _this = this
+                setInterval(()=>{
+                    console.log(this.msg)
+                    //获取到头的第一个字符
+                    var start = this.msg.substring(0,1)
+                    //获取到后面的所有字符
+                    var end = this.msg.substring(1)
+                    //重新拼接得到新的字符串，并赋值给this.msg
+                    this.msg = end+start
+                    //注意：vm实例，会监听自己身上所有数据的改变只要数据已发生变化，就会自动把最新的数据，从data上同步到页面中去，【好处：程序员只考虑数据，不需要考虑如何重新渲染DOM】
+                },400)
+
+            }
+        }
+    })
+</script>
+</body>
+</html>
